@@ -12,30 +12,48 @@ This is the landing page for the Olive Bootcamp, a 6-week program helping Palest
 1. Clone this repository
 2. Open `index.html` in your web browser to view the site locally
 
-### Form Handling with Formspree
-This site uses Formspree for handling form submissions. The form is configured with a direct form endpoint.
+### Form Handling with Formspree CLI
+This site uses Formspree for handling form submissions via a form endpoint created with the Formspree CLI.
 
 The form is set up to:
-- Send notifications to the email associated with the Formspree form
-- Include the subject "New Olive Bootcamp Application"
-- Redirect users to the thanks.html page after submission
-- Protect from spam with a honeypot field
+- Send notifications to the email associated with your Formspree account
+- Redirect users to the thanks.html page after successful submission
+- Process submissions securely through Formspree's service
 
 ### Form Configuration
-The form uses the standard Formspree endpoint URL:
+The form uses a direct Formspree endpoint URL in the action attribute:
 ```html
-<form id="apply-form" action="https://formspree.io/f/xvoeqdpd" method="POST">
+<form id="apply-form" action="https://formspree.io/p/2688535783240892369/f/applicationForm" method="POST">
 ```
 
+### Setting Up Formspree CLI
+This form was created using the Formspree CLI. To set up similar forms:
+
+1. Install the Formspree CLI:
+   ```
+   npm install -g @formspree/cli
+   ```
+
+2. Initialize a formspree.json file:
+   ```
+   formspree init
+   ```
+
+3. Edit the formspree.json file to define your forms
+
+4. Deploy the configuration:
+   ```
+   formspree deploy
+   ```
+
+5. Use the provided endpoint URL in your HTML form's action attribute
+
 ### Customizing the Form
-To change the form configuration:
+To change the form settings:
 
-1. Log in to your Formspree account at https://formspree.io/
-2. Navigate to the form with ID "xvoeqdpd"
-3. Update the settings as needed (email recipients, redirects, etc.)
-
-### Redirects
-After form submission, users will be redirected to the `thanks.html` page as specified in the form's `_next` hidden field.
+1. Log in to your Formspree dashboard
+2. Navigate to the form
+3. Update settings such as email notifications, redirects, and spam protection
 
 ## Website Structure
 - `/index.html` - Main landing page
