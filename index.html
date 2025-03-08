@@ -342,31 +342,83 @@
           </div>
         </div>
 
-        <!-- Simple application form -->
+        <!-- Enhanced application form with sections -->
         <div class="application-form">
-          <h3>Apply Now</h3>
+          <h3>Apply for Olive Bootcamp</h3>
+          <p class="form-intro">Fill out this application to join our next cohort starting April 14th, 2025. We'll review your submission and get back to you soon.</p>
+          
           <form id="apply-form" action="https://formspree.io/p/2688535783240892369/f/applicationForm" method="POST">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" required />
+            <!-- Personal Information Section -->
+            <div class="form-section">
+              <h4>Personal Information</h4>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your full name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="location">Location</label>
+                  <input type="text" id="location" name="location" placeholder="City/Region" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number (optional)</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+970 5X XXX XXXX" />
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" required />
+            
+            <!-- About Your Startup Section -->
+            <div class="form-section">
+              <h4>About Your Startup</h4>
+              <div class="form-group">
+                <label for="idea">Describe your startup idea</label>
+                <p class="field-hint">What problem are you solving? Who are your target customers?</p>
+                <textarea id="idea" name="idea" rows="4" placeholder="Share your startup idea here..." required></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="stage">What stage are you at?</label>
+                <select id="stage" name="stage" required>
+                  <option value="" disabled selected>Select your current stage</option>
+                  <option value="Just an idea">Just an idea</option>
+                  <option value="Working on prototype">Working on prototype</option>
+                  <option value="Early prototype ready">Early prototype ready</option>
+                  <option value="Already have users">Already have users</option>
+                </select>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="idea">Briefly describe your startup idea</label>
-              <textarea id="idea" name="idea" rows="4" required></textarea>
+            
+            <!-- About You Section -->
+            <div class="form-section">
+              <h4>About You</h4>
+              <div class="form-group">
+                <label for="experience">Your background and experience</label>
+                <p class="field-hint">Tell us about your skills, education, work experience, etc.</p>
+                <textarea id="experience" name="experience" rows="4" placeholder="Share your relevant experience..." required></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="goals">What do you hope to achieve with this bootcamp?</label>
+                <textarea id="goals" name="goals" rows="3" placeholder="Your learning goals and expectations..."></textarea>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="experience">What is your background/experience?</label>
-              <textarea id="experience" name="experience" rows="4" required></textarea>
-            </div>
+            
             <!-- Formspree configuration -->
             <input type="hidden" name="_subject" value="New Olive Bootcamp Application" />
             <input type="hidden" name="_next" value="/thanks.html" />
             <input type="text" name="_gotcha" style="display:none" />
-            <button type="submit" class="btn">Submit Application</button>
+            
+            <div class="form-submit">
+              <p class="privacy-note">By submitting this form, you agree to be contacted about the Olive Bootcamp program.</p>
+              <button type="submit" class="btn">Submit Application</button>
+            </div>
           </form>
         </div>
       </div>

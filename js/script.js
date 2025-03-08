@@ -44,19 +44,51 @@ document.addEventListener('DOMContentLoaded', function() {
         applyForm.addEventListener('submit', function(e) {
             // Basic validation
             let valid = true;
+            
+            // Required fields
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
+            const location = document.getElementById('location').value;
             const idea = document.getElementById('idea').value;
+            const stage = document.getElementById('stage').value;
             const experience = document.getElementById('experience').value;
             
-            if (!name || !email || !idea || !experience) {
-                e.preventDefault(); // Prevent form submission if validation fails
+            // Check required fields
+            const requiredFields = [
+                { id: 'name', label: 'Full Name' },
+                { id: 'email', label: 'Email Address' },
+                { id: 'location', label: 'Location' },
+                { id: 'idea', label: 'Startup Idea' },
+                { id: 'stage', label: 'Current Stage' },
+                { id: 'experience', label: 'Background & Experience' }
+            ];
+            
+            let missingFields = [];
+            
+            requiredFields.forEach(field => {
+                const value = document.getElementById(field.id).value.trim();
+                if (!value) {
+                    missingFields.push(field.label);
+                    document.getElementById(field.id).classList.add('input-error');
+                } else {
+                    document.getElementById(field.id).classList.remove('input-error');
+                }
+            });
+            
+            if (missingFields.length > 0) {
+                e.preventDefault(); // Prevent form submission
                 valid = false;
-                alert('Please fill out all fields');
-            } else if (!validateEmail(email)) {
-                e.preventDefault(); // Prevent form submission if validation fails
+                alert(`Please fill out the following required fields: ${missingFields.join(', ')}`);
+                return;
+            }
+            
+            // Email validation
+            if (!validateEmail(email)) {
+                e.preventDefault(); // Prevent form submission
                 valid = false;
                 alert('Please enter a valid email address');
+                document.getElementById('email').classList.add('input-error');
+                return;
             }
             
             // If validation passes, the form will submit normally
@@ -64,11 +96,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Add a loading state to the button
                 const submitButton = e.target.querySelector('button[type="submit"]');
                 if (submitButton) {
-                    submitButton.innerHTML = 'Submitting...';
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
                     submitButton.disabled = true;
                 }
+                
                 // Form will be submitted normally to the Formspree endpoint
+                // We'll handle the success/error in Formspree's configuration
             }
+        });
+        
+        // Remove error styling when user starts typing
+        const inputs = applyForm.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.classList.remove('input-error');
+            });
         });
     };
 
