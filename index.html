@@ -345,7 +345,7 @@
         <!-- Simple application form -->
         <div class="application-form">
           <h3>Apply Now</h3>
-          <form id="apply-form" action="https://formspree.io/f/YOUR_NEW_FORM_ID" method="POST">
+          <form id="apply-form" data-form="applicationForm">
             <div class="form-group">
               <label for="name">Your Name</label>
               <input type="text" id="name" name="name" required />
@@ -362,9 +362,7 @@
               <label for="experience">What is your background/experience?</label>
               <textarea id="experience" name="experience" rows="4" required></textarea>
             </div>
-            <!-- Formspree configuration handled directly in HTML -->
-            <input type="hidden" name="_subject" value="New Olive Bootcamp Application" />
-            <input type="hidden" name="_next" value="/thanks.html" />
+            <!-- Formspree configuration handled via formspree.json -->
             <input type="text" name="_gotcha" style="display:none" />
             <button type="submit" class="btn">Submit Application</button>
           </form>
@@ -401,7 +399,13 @@
       </div>
     </footer>
 
-    <!-- FontAwesome is loaded via CSS in the head section -->
+    <!-- Formspree JS Library -->
+    <script defer src="https://formspree.io/js/formbutton-v1.min.js"></script>
+    <script>
+      window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments);};
+    </script>
+
+    <!-- Our Custom Scripts -->
     <script src="js/script.js"></script>
   </body>
 </html>
