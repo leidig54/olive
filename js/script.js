@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return re.test(String(email).toLowerCase());
     }
     
-    // Application form handling with standard form submission
+    // Application form handling with standard form submission to Formspree endpoint
     const setupApplicationForm = () => {
         const applyForm = document.getElementById('apply-form');
         if (!applyForm) return;
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     submitButton.innerHTML = 'Submitting...';
                     submitButton.disabled = true;
                 }
-                // Form will be submitted normally to the action URL
+                // Form will be submitted normally to the Formspree endpoint
             }
         });
     };
