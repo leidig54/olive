@@ -63,4 +63,4 @@ To change the form settings:
 - `/images/` - Image assets
 
 ## Contact
-For questions or updates, contact [george@olivestartups.org](mailto:george@olivestartups.org).
+For questions or updates, contact [georgeleidig@icloud.com](mailto:georgeleidig@icloud.com).
