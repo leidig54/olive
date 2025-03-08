@@ -362,8 +362,9 @@
               <label for="experience">What is your background/experience?</label>
               <textarea id="experience" name="experience" rows="4" required></textarea>
             </div>
-            <!-- Formspree configuration is handled via the formspree.json file -->
+            <!-- Formspree configuration handled directly in HTML -->
             <input type="hidden" name="_subject" value="New Olive Bootcamp Application" />
+            <input type="hidden" name="_next" value="/thanks.html" />
             <input type="text" name="_gotcha" style="display:none" />
             <button type="submit" class="btn">Submit Application</button>
           </form>

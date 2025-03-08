@@ -1,19 +1,5 @@
 {
   "forms": {
-    "oliveBoot": {
-      "name": "Olive Bootcamp Application Form",
-      "formId": "xrgyzrwj",
-      "actions": [
-        {
-          "type": "email",
-          "to": "george@olivestartups.org"
-        }
-      ],
-      "submitRedirectTo": "/thanks.html"
-    }
-  },
-  "deploy": {
-    "project": "2688535783240892369",
-    "key": "b3fce50e8e1d45afa8c641e62ce9f980"
+    "applicationForm": "xrgyzrwj"
   }
 }
