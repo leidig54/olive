@@ -13,35 +13,24 @@ This is the landing page for the Olive Bootcamp, a 6-week program helping Palest
 2. Open `index.html` in your web browser to view the site locally
 
 ### Form Handling with Formspree
-This site uses Formspree for handling form submissions. The configuration is in `formspree.json`.
+This site uses Formspree for handling form submissions. The form is configured directly in the HTML.
 
-To set up Formspree:
-
-1. Install the Formspree CLI:
-   ```
-   npm install -g @formspree/cli
-   ```
-
-2. Log in to Formspree:
-   ```
-   formspree login
-   ```
-
-3. Deploy your form configuration:
-   ```
-   formspree deploy
-   ```
-
-The form is already configured to use the form ID `xrgyzrwj`. The submission will be emailed to the address specified in the `formspree.json` file.
+The form is already set up with the ID `xrgyzrwj`. Form submissions will be:
+- Sent to the email address associated with this Formspree form
+- Include the subject "New Olive Bootcamp Application"
+- Redirect users to the thanks.html page after submission
+- Protected from spam with a honeypot field
 
 ### Customizing the Form
 To change the form configuration:
 
-1. Edit the `formspree.json` file
-2. Run `formspree deploy` to update your form settings
+1. Log in to your Formspree account at https://formspree.io/
+2. Navigate to the form with ID `xrgyzrwj`
+3. Update the settings as needed (email recipients, redirects, etc.)
+4. If you need to use a different form ID, update it in the HTML form action
 
 ### Redirects
-After form submission, users will be redirected to the `thanks.html` page as specified in the `formspree.json` file.
+After form submission, users will be redirected to the `thanks.html` page as specified in the HTML form's `_next` field.
 
 ## Website Structure
 - `/index.html` - Main landing page
