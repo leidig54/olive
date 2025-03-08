@@ -35,15 +35,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return re.test(String(email).toLowerCase());
     }
     
-    // Application form handling with Formspree JSON config
+    // Application form handling with standard form submission
     const setupApplicationForm = () => {
         const applyForm = document.getElementById('apply-form');
         if (!applyForm) return;
         
         // Client-side validation before form submission
         applyForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent default as we'll handle submission manually
-            
             // Basic validation
             let valid = true;
             const name = document.getElementById('name').value;
@@ -52,16 +50,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const experience = document.getElementById('experience').value;
             
             if (!name || !email || !idea || !experience) {
+                e.preventDefault(); // Prevent form submission if validation fails
                 valid = false;
                 alert('Please fill out all fields');
-                return;
             } else if (!validateEmail(email)) {
+                e.preventDefault(); // Prevent form submission if validation fails
                 valid = false;
                 alert('Please enter a valid email address');
-                return;
             }
             
-            // If validation passes, submit using formbutton
+            // If validation passes, the form will submit normally
             if (valid) {
                 // Add a loading state to the button
                 const submitButton = e.target.querySelector('button[type="submit"]');
@@ -69,32 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     submitButton.innerHTML = 'Submitting...';
                     submitButton.disabled = true;
                 }
-                
-                // Get the form data
-                const formData = {
-                    name: name,
-                    email: email,
-                    idea: idea,
-                    experience: experience
-                };
-                
-                // Submit the form using formbutton
-                formbutton('submit', {
-                    formId: 'applicationForm',
-                    data: formData,
-                    onSuccess: function() {
-                        // Redirect to the thank you page
-                        window.location.href = '/thanks.html';
-                    },
-                    onError: function(errors) {
-                        alert('Error submitting form. Please try again later.');
-                        if (submitButton) {
-                            submitButton.innerHTML = 'Submit Application';
-                            submitButton.disabled = false;
-                        }
-                        console.error(errors);
-                    }
-                });
+                // Form will be submitted normally to the action URL
             }
         });
     };
