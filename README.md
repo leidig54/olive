@@ -62,5 +62,3 @@ To change the form settings:
 - `/js/` - JavaScript directory
 - `/images/` - Image assets
 
-## Contact
-For questions or updates, contact [georgeleidig@icloud.com](mailto:georgeleidig@icloud.com).
