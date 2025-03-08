@@ -1,6 +1,6 @@
 # Olive Bootcamp Website
 
-This is the landing page for the Olive Bootcamp, a 6-week program helping Palestinian entrepreneurs go from idea to MVP.
+This is the landing page for the Olive Bootcamp, a 6-week program that helps Palestinian entrepreneurs build and launch their startups.
 
 ## Setup and Deployment
 
