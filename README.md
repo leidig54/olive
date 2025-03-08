@@ -15,7 +15,7 @@ This is the landing page for the Olive Bootcamp, a 6-week program helping Palest
 ### Form Handling with Formspree
 This site uses Formspree for handling form submissions. The form is configured directly in the HTML.
 
-The form is already set up with the ID `xrgyzrwj`. Form submissions will be:
+The form is set up with your Formspree form ID. Form submissions will be:
 - Sent to the email address associated with this Formspree form
 - Include the subject "New Olive Bootcamp Application"
 - Redirect users to the thanks.html page after submission
@@ -25,7 +25,7 @@ The form is already set up with the ID `xrgyzrwj`. Form submissions will be:
 To change the form configuration:
 
 1. Log in to your Formspree account at https://formspree.io/
-2. Navigate to the form with ID `xrgyzrwj`
+2. Navigate to your form
 3. Update the settings as needed (email recipients, redirects, etc.)
 4. If you need to use a different form ID, update it in the HTML form action
 
