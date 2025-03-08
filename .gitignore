@@ -1,0 +1,49 @@
+# Dependency directories
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# Build output
+dist/
+build/
+out/
+
+# Environment variables and secrets
+.env
+.env.*
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+*.env
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and editor directories
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs
+*.log
+
+# Formspree secrets
+# Note: We're keeping formspree.json for collaboration,
+# but in a real-world scenario you might want to gitignore this file
+# formspree.json
+.formspree/
+.formspree-deploy-secrets
+formspree-credentials.json
